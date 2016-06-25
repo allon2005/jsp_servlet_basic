@@ -9,4 +9,32 @@
     <welcome-file>default.htm</welcome-file>
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
+  
+  <servlet>    <!-- -this is to define the servlet name and corresponding class -->
+  <servlet-name>xmlServlet0</servlet-name>
+  <servlet-class>allon2005.servletBasic0.xmlSevlet0</servlet-class>
+  </servlet>
+  
+  <servlet-mapping> <!-- this is to map the servlet to certain url request pattern. When an url comes in, Tomcat will know which servlet should be called -->
+  <servlet-name>xmlServlet0 </servlet-name>
+  <url-pattern>/xmlServlet0</url-pattern>
+  </servlet-mapping>
+  
+  
+  
+  
 </web-app>
+
+<!-- -
+1. for xmlServlet0, at the begaining, if the url-pattern is  <url-pattern>/xmlServlet0</url-pattern> (***NO slash at the end), when running on server, the url will be:
+http://localhost:8080/JspServlet0/servlet/allon2005.servletBasic0.xmlServlet0. 
+And,the page is not available!!!
+
+After I added a trailing "/" at the end (<url-pattern>/xmlServlet0/</url-pattern>), the url becomes:  http://localhost:8080/JspServlet0/xmlServlet0
+
+After that, I remove the trailing "/", everything is till fine. ====>very weird!!!!
+
+2. within one webapplication, we can have both annotated (ServletBasic0) and the xml configured (xmlServlet0) servlets running!
+
+
+ -->

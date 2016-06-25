@@ -21,7 +21,7 @@ public class ServletBasic0 extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		//response.getWriter().append("Served at: ").append(request.getContextPath());
 		System.out.println("this is doGet(..) from ServletBasic0");  //this will print the content to the console, not to the webpage (http://localhost:8080/JspServlet0/ServletBasic0 will be blank)
-		response.getWriter().append("hello from JspServlet0"); // using response.getWriter is to add the info to the response, which will be published to the webpage
+		response.getWriter().append("hello from JspServlet0 doGet(..)"); // using response.getWriter is to add the info to the response, which will be published to the webpage
 	}
 
 	/**
@@ -38,5 +38,10 @@ public class ServletBasic0 extends HttpServlet {
 /*1. doGet(...) and doPost(..) take two parameters: request and response. We can extract info from request and put requested content to response, and then send 
  * back to the client
  * 
+ * 2. url segment mapping: 
+ *  2.1: localHost:8080: get the tomcat instance start
+ *  2.2: localHost:8080/JspServlet0: tomcat access the project root. If there is a default file (defined in web.xml) existing for this web application, will return that default file
+ *  2.3: localHost:8080/JspServlet0/ServletBasic0: this url maps to a specific servlet inside the JspServlet web application. Insdie the servlet, the url pattern defines the access. Tomcat will call this servlet and send the response hjcontent from
+ *       this servlet to the client. 
  * 
  */

@@ -63,10 +63,6 @@ public class servletBasic1 extends HttpServlet {
 				+ "state : " + state +"<br>"
 				+ "zip code : " + zipCode +"<br>"
 				+ "interest : " + interest.toString());
-				
-				
-		
-		
 	}
 
 }

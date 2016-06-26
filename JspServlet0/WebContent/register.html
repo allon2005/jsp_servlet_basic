@@ -66,4 +66,18 @@ Please fill the following information for registration.
 
 3. in the form, in the action, we put "servletBasic1"(we need put servlet name), not "/servletBasic1". The action will submit the data to the corresponding servlet
 
+
+4.  "get" vs "post", 
+see: http://www.w3schools.com/tags/ref_httpmethods.asp
+
+General rules:
+4.1 if just simply "get" data and no data change in the database involved, "get" is good. (if "get" can trigger database change, it would be bad since the user can put any data in the url)
+4.2 "get" is not good for sensitive data since you can view the data in the url.
+4.3 if need many data and use "get", the url will be lengthy.
+4.4. refreshing url each time will call the doGet(..) automatically and the data will be submitted.
+
+*4.5 "post" is more "safe" since user can not view and manipulate the data in url.
+*4.6 "post" is assumed to change data in the database. So, you will get warning when you refresh a web application using "post". 
+
+so, be careful about what to use when coming to "get" and "post".
  -->

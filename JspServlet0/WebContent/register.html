@@ -6,23 +6,23 @@
 </head>
 <body>
 
-<form id="form1" l;action="servletBasic1">
+<h3>This is for doGet(..) for servletBasic1. <h3>
+<form id="form1a" l;action="servletBasic1">
 
 <input type="text" name="username" size="30"/>
 <input type="submit" value="send by get"/>
 
 </form>
-<br>
-<br>
-
-<h2>The following is an example form for post method</h2>
 
 <br><br>
-<form action="servletBasic1" method="post">
 
-Please fill the following information for registration.
+<h3>The following is an example form for post method in servletBasic1</h3>
 
-<br><br>
+<form id="form1b" action="servletBasic1" method="post">
+
+<p>Please fill the following information for registration.</p>
+
+<br>
 <input type="text" name="userName" placeholder="user name" size="30"/>
 <br><br>
 <input type="text" name="firstName" placeholder="first name" size="15"/>
@@ -54,6 +54,17 @@ Please fill the following information for registration.
 <input type="submit" value="send by post"/>
 
 </form>
+
+<br><br>
+<h3>This is for doGet(..) && session for servletBasic2. </h3>
+<form id="form2" l action="servletBasic2">
+
+<input type="text" name="userName" size="30"/>
+<input type="submit" value="send by get"/>
+
+</form>
+
+<br><br>
 
 
 </body>

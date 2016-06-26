@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Servlet implementation class servletBasic1
+ * Servlet implementation class servletBasic2
  * 
  * focus on doGet() and doPost()
  */
@@ -28,12 +28,12 @@ public class servletBasic1 extends HttpServlet {
 		writer.println("The username from url by get method is  : " + username);
 	}
 
-	
+
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
+
 		PrintWriter writer = response.getWriter();
 		String userName = request.getParameter("userName");  //this will get the value of "username" from the "post" method
 		String firstName = request.getParameter("firstName");  //if multiple data are posted, we can get each of them from the "request".
@@ -44,15 +44,18 @@ public class servletBasic1 extends HttpServlet {
 		String state = request.getParameter("state");  
 		String zipCode = request.getParameter("zipCode");  
 		String[] interestList = request.getParameterValues("interest");  //if certain request item has multiple inputs, need to use this method to return a String[].
-		
+
 		StringBuilder interest = new StringBuilder();
-		for(String str : interestList)
+		if(interestList !=null && interestList.length > 0)
 		{
-			interest.append(str + ",");
+			for(String str : interestList)
+			{
+				interest.append(str + ",");
+			}
+
+			interest.deleteCharAt(interest.length()-1);
 		}
-		
-		interest.deleteCharAt(interest.length()-1);
-		
+
 		writer.println("The register information are: " + "<br>"
 				+ "user name : " + userName +"<br>"
 				+ "first name : " + firstName +"<br>"

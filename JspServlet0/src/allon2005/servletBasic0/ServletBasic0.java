@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Servlet implementation class ServletBasic1
  */
-@WebServlet(description = "servlet basic0", urlPatterns = { "/ServletBasic1" }) // this class is annotated as "WebServlet" automatically. The "urlPatterns" is created during the class creation.
+@WebServlet(description = "servlet basic0", urlPatterns = { "/ServletBasic0" }) // this class is annotated as "WebServlet" automatically. The "urlPatterns" is created during the class creation.
                                                               // so, if the url request is: localHost:8080/JspServlet0/ServletBasic1, this class (servlet) will be called.
 public class ServletBasic0 extends HttpServlet {
 	private static final long serialVersionUID = 1L;

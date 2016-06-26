@@ -17,7 +17,7 @@ public class xmlSevlet0 extends HttpServlet {
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		
 		System.out.print("the protocal of this url request is:  " + req.getProtocol());
-		resp.getWriter().append("the protocal of this url request is:  " + req.getProtocol());
+		resp.getWriter().println("the protocal of this url request is:  " + req.getProtocol());
 	}
 	
 	

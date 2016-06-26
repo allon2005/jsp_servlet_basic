@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Register form</title>
+</head>
+<body>
+
+<form id="form1" l;action="servletBasic1">
+
+<input type="text" name="username" size="30"/>
+<input type="submit" value="send by get"/>
+
+</form>
+<br>
+<br>
+
+<h2>The following is an example form for post method</h2>
+
+<br><br>
+<form action="servletBasic1" method="post">
+
+Please fill the following information for registration.
+
+<br><br>
+<input type="text" name="userName" placeholder="user name" size="30"/>
+<br><br>
+<input type="text" name="firstName" placeholder="first name" size="15"/>
+<input type="text" name="lastName" placeholder="last name" size="15"/>
+<br><br>
+<input type="text" name="address1" placeholder="address line 1" size="100"/>
+<br><br>
+<input type="text" name="address2" placeholder="address line 2" size="100"/>
+<br><br>
+<input type="text" name="city" placeholder="city" size="20"/>
+<select name="state">
+ <option value="" disabled selected hidden>state</option>
+ <option value="Alabama">Alabama</option>
+ <option value="Georgia">Georgia</option>
+ <option value="Tennessee">Tennessee</option>
+ <option value="South Carolina">South Carolina</option>
+ <option value="Other state">Other state</option>
+</select>
+<input type="text" name="zipCode" placeholder="zip code" size="10"/>
+<br><br>
+<select name="interest" multiple="multiple">
+<option value="" disabled selected hidden>select your interest(s)</option>
+<option value="Tech">Tech</option>
+<option value="Business">Business</option>
+<option value="Travel">Travel</option>
+<option value="Reading">Reading</option>
+</select>
+<br><br>
+<input type="submit" value="send by post"/>
+
+</form>
+
+
+</body>
+</html>
+
+<!-- -
+1. all webpage files(html, jsp..) should be put into the Webcontent folder(NOT in the WEB-INF unless special requirement)
+
+2. in the form, if no explicit "method", the default method will be "GET"==>so, we can see the data in the url
+
+3. in the form, in the action, we put "servletBasic1"(we need put servlet name), not "/servletBasic1". The action will submit the data to the corresponding servlet
+
+ -->

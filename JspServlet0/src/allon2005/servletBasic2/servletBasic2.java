@@ -36,7 +36,7 @@ public class servletBasic2 extends HttpServlet {
 		writer.println("<br>");
 		writer.println("The saved session parameter from doGet(..) is: " + (String)session.getAttribute("userName_session"));
 		
-		//*********** ServletContext : will allow the data to be saved and available across user and session
+		//*********** ServletContext : will allow the data to be saved and available across user and session. One context for the whole application. Every request share the same context
 		
 		ServletContext context = request.getServletContext();  //
 		

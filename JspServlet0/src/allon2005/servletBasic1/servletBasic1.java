@@ -2,7 +2,7 @@ package allon2005.servletBasic1;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.ArrayList;
+import java.util.Enumeration;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -24,8 +24,33 @@ public class servletBasic1 extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		PrintWriter writer = response.getWriter();
-		String username = request.getParameter("username");  //this will get the value of "username" from the url.  http://localhost:8080/JspServlet0/xmlServlet1?username=allon2005
+		/*String username = request.getParameter("username");  //this will get the value of "username" from the url.  http://localhost:8080/JspServlet0/xmlServlet1?username=allon2005
 		writer.println("The username from url by get method is  : " + username);
+		*/
+
+		//the following codes can be used soly by "get" method to print parameter/value, and also by "post" to print param/values!!!!
+	      Enumeration paramNames = request.getParameterNames();
+	      
+	      while(paramNames.hasMoreElements()) {
+	         String paramName = (String)paramNames.nextElement();
+	         writer.print(paramName + " : ");
+	         String[] paramValues =
+	                request.getParameterValues(paramName);
+	         // Read single valued data
+	         if (paramValues.length == 1) {
+	           String paramValue = paramValues[0];
+	           if (paramValue.length() == 0)
+	        	   writer.println("No Value");
+	           else
+	        	   writer.println(paramValue);
+	         } else {
+	             // Read multiple valued data
+	             for(int i=0; i < paramValues.length-1; i++) {
+	            	 writer.println(paramValues[i] + ",");
+	             }
+	             writer.println(paramValues[paramValues.length-1]);
+	         }
+	      }
 	}
 
 
@@ -66,6 +91,14 @@ public class servletBasic1 extends HttpServlet {
 				+ "state : " + state +"<br>"
 				+ "zip code : " + zipCode +"<br>"
 				+ "interest : " + interest.toString());
+		
+	//// or we should get the param Name and value by code, not hard-coded
+	// we will pass the request and response to doGet() to handle it!!!  however, the initial method is "post", so the parameter's value is not visible in the URL
+		doGet(request,response);
 	}
+	
+	
+	
+	
 
 }
